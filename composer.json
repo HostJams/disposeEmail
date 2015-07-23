@@ -1,5 +1,5 @@
 {
-  "name": "HostJams/disposeEmail",
+  "name": "hostjams/dispose-email",
   "type": "library",
   "description": "This is an open sources/free API that allows developers to query HostJams API to check if an email is disposable",
   "keywords": ["dispose, dispose email, disposable email, bogus email, bogus email checker, dispose email database, database of dispose email, dispose email api, dispose api"],
