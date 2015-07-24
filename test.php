@@ -15,5 +15,7 @@ $api = new Dispose();
 $action = 'request';
 $email = 'kemoy@rit.edu';
 $api->submit($action,$email);
-$api->getApi_response();
+$api->getApi_responseJson();
+$api->getApi_responseArray();
+$api->getHeaderStatus();
 

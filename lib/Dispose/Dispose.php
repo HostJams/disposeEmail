@@ -44,7 +44,7 @@ class Dispose
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $url = 'http://developer.hostjams.com/disposable/dispose.php?action='.$this->action.'&domain='.$this->domain;
         curl_setopt($ch, CURLOPT_URL,$url);
-        $this->api_response = json_decode(curl_exec($ch), true);
+        $this->api_response = curl_exec($ch);
         curl_close($ch);
 
     }
@@ -65,12 +65,35 @@ class Dispose
      }
 
     /**
-     * get the result from the api
+     * get the result from the api in Json format
      */
-    public function getApi_response()
+    public function getApi_responseJson()
     {
-        print_r($this->api_response);
+       //print_r($this->api_response);
+
+        return $this->api_response;
 
     }
+
+    /**
+     * get the result from the api in array format
+     */
+
+    public function getApi_responseArray()
+    {
+        //print_r(json_decode($this->api_response,true));
+        return json_decode($this->api_response,true);
+    }
+
+    /**
+     * get the status header status response
+     */
+    public function getHeaderStatus()
+    {
+        $status = json_decode($this->api_response,true);
+        echo $status['status'];
+    }
+
+
 
 }
